@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>NRJ Print</title>
+<script>
+window.onload=function(){
+  var c=localStorage.getItem('nrj_print_content');
+  if(c){
+    document.open();
+    document.write(c);
+    document.close();
+    setTimeout(function(){window.print();},600);
+  } else {
+    document.body.innerHTML='<p style="font-family:Arial;padding:20px">Nothing to print. Go back and click a print button.</p>';
+  }
+};
+</script>
+</head>
+<body></body>
+</html>
